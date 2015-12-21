@@ -1,0 +1,85 @@
+# Feel free to disable non-critical HA parts during devel by commenting lines out
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
+
+Description: Pattern with packages for fp2-sibon HW Adaptation
+Name: jolla-hw-adaptation-fp2-sibon
+Requires:
+- pattern:jolla-hw-adaptation-hybris
+- pattern:jolla-hw-adaptation-hybris-droid-vibrator
+- pattern:jolla-ui-configuration-fp2-sibon
+
+- droid-hal-fp2-sibon
+- droid-hal-fp2-sibon-detritus
+- droid-hal-fp2-sibon-img-boot
+- droid-hal-fp2-sibon-kernel-modules
+- droid-config-fp2-sibon-sailfish
+- droid-config-fp2-sibon-pulseaudio-settings
+- droid-config-fp2-sibon-policy-settings
+- droid-config-fp2-sibon-preinit-plugin
+- droid-hal-version-fp2-sibon
+
+- pulseaudio-modules-droid
+# for audio recording to work:
+- qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
+
+# These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
+- qt5-qtwayland-wayland_egl
+- qt5-qpa-hwcomposer-plugin
+- qtscenegraph-adaptation
+
+# GStreamer v0.10 multimedia support is being deprecated
+#- gstreamer0.10-droidcamsrc
+#- gstreamer0.10-omx
+#- gstreamer0.10-droideglsink
+#- nemo-qtmultimedia-plugins-gstvideotexturebackend
+
+# Add GStreamer v1.0 as standard
+- gstreamer1.0
+- gstreamer1.0-plugins-good
+- gstreamer1.0-plugins-base
+- gstreamer1.0-plugins-bad
+- nemo-gstreamer1.0-interfaces
+
+- gstreamer1.0-droid
+
+# This is needed for notification LEDs
+- mce-plugin-libhybris
+
+## USB mode controller
+# Enables mode selector upon plugging USB cable:
+- usb-moded
+- usb-moded-defaults-android
+- usb-moded-developer-mode-android
+- usb-moded-pc-suite-mode-android
+
+# Extra useful modes not officially supported:
+# might need some configuration to get working
+#- usb-moded-mass-storage-android-config
+# working but careful with roaming!
+- usb-moded-connection-sharing-android-config
+# android diag mode only usable for certain android tools
+- usb-moded-diag-mode-android
+
+# from update13, this is needed explicitly
+- bluez-configs-sailfish
+# hammerhead, grouper, and maguro use this in scripts, so include for all
+- rfkill
+
+# enable device lock and allow to select untrusted software
+- jolla-devicelock-plugin-encsfa
+
+# Settings app needs this since update15
+- jolla-settings-layout
+
+# For devices with working cellular modem:
+- pattern:jolla-sailfish-cellular-apps
+- telepathy-ring
+
+# For devices where test_gps eventually gets a fix:
+- geoclue-provider-hybris-community
+
+# for audio during calls
+- pulseaudio-modules-droid-glue
+
+Summary: Jolla HW Adaptation fp2-sibon
+

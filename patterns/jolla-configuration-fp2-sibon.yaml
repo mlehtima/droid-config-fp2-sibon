@@ -1,0 +1,14 @@
+# Feel free to disable non-critical HA parts during devel by commenting lines out
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
+
+Description: Pattern with packages for fp2-sibon configurations
+Name: jolla-configuration-fp2-sibon
+Requires:
+- pattern:jolla-hw-adaptation-fp2-sibon
+- pattern:jolla-sailfish-applications
+- pattern:jolla-ui-wayland
+# Early stages of porting benefit from these:
+- pattern:sailfish-porter-tools
+
+Summary: Jolla Configuration fp2-sibon
+

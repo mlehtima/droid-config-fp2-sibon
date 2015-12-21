@@ -1,0 +1,10 @@
+# Feel free to disable non-critical HA parts during devel by commenting lines out
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
+
+Description: Pattern with UI related packages for fp2-sibon configurations
+Name: jolla-ui-configuration-fp2-sibon
+Requires:
+- jolla-ambient-z@ICON_RES@
+- ambient-icons-closed-z@ICON_RES@
+Summary: Jolla UI Configuration fp2-sibon
+
