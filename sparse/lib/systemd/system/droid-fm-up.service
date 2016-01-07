@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable FM Radio
+DefaultDependencies=false
+After=droid-hcismd-up.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /usr/bin/droid/droid-fm-up.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=bluetooth.service
