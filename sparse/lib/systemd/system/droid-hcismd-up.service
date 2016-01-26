@@ -1,7 +1,8 @@
 [Unit]
 Description=Enable Bluetooth HCI over SMD
-DefaultDependencies=false
-After=local-fs.target
+After=droid-late-start.target
+Before=bluetooth.service
+Conflicts=shutdown.target actdead.target
 
 [Service]
 Type=oneshot
