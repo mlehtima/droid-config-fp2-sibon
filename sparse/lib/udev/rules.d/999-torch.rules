@@ -1,0 +1,1 @@
+SUBSYSTEM=="leds", RUN+="/bin/chmod 666 /sys/class/leds/led:flash_torch/brightness"
