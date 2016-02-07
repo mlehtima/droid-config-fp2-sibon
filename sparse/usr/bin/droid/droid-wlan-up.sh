@@ -12,4 +12,4 @@ while [ ! -e /data/misc/wifi/WCNSS_qcom_cfg.ini ]; do
 done
 echo "...waiting for services to settle"
 sleep 10
-modprobe pronto_wlan
+/sbin/modprobe pronto_wlan
