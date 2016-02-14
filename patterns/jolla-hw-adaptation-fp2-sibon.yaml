@@ -81,5 +81,8 @@ Requires:
 # for audio during calls
 - pulseaudio-modules-droid-glue
 
+# For mounting SD card automatically
+- sd-utils
+
 Summary: Jolla HW Adaptation fp2-sibon
 
