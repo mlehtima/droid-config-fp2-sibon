@@ -1,0 +1,10 @@
+[Unit]
+Description=ohmd restart hack
+After=init-done.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart ohmd
+
+[Install]
+WantedBy=multi-user.target
