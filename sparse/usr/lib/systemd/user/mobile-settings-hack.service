@@ -1,0 +1,10 @@
+[Unit]
+Description=Mobile settings hack
+After=jolla-settings-mask-tool.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dconf reset /apps/jolla-settings/maskedSettings
+
+[Install]
+WantedBy=user-session.target
