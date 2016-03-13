@@ -1,7 +1,7 @@
 [Unit]
 Description=sensorfwd delay hack
 After=droid-late-start.service
-Before=sensorfwd,service
+Before=sensorfwd.service
 
 [Service]
 Type=oneshot
