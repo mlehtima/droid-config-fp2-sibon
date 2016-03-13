@@ -58,7 +58,7 @@ Requires:
 # working but careful with roaming!
 - usb-moded-connection-sharing-android-config
 # android diag mode only usable for certain android tools
-- usb-moded-diag-mode-android
+#- usb-moded-diag-mode-android
 
 # from update13, this is needed explicitly
 - bluez-configs-sailfish
