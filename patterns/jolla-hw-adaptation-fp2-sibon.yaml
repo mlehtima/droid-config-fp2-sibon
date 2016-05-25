@@ -84,5 +84,8 @@ Requires:
 # For mounting SD card automatically
 - sd-utils
 
+# For FM radio
+- qt5-qtmultimedia-plugin-mediaservice-irisradio
+
 Summary: Jolla HW Adaptation fp2-sibon
 
