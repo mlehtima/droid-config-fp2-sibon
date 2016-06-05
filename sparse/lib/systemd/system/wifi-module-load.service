@@ -8,6 +8,7 @@ Conflicts=shutdown.target actdead.target
 Type=simple
 RemainAfterExit=yes
 ExecStartPre=/bin/touch /dev/wcnss_wlan
+ExecStartPre=/bin/sleep 10
 ExecStart=/sbin/modprobe pronto_wlan
 ExecStop=/sbin/rmmod wlan
 Restart=on-failure
