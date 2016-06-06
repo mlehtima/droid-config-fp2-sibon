@@ -5,10 +5,19 @@
 # not work, so we loop.
 MAXTRIES=15
 
-seq 1 $MAXTRIES | while read i ; do
+i=1
+while [ ! $i -gt $MAXTRIES ]  ; do
     echo 1 > /sys/module/hci_smd/parameters/hcismd_set
     if [ -e /sys/class/bluetooth/hci0 ] ; then
-        # found hci0, exit successfully
+        # found hci0, get/set BT MAC address
+        echo 0 > /sys/module/hci_smd/parameters/hcismd_set
+        bt_mac=$(/system/bin/hci_qcomm_init -e -p 2 -P 2 -d /dev/ttyHSL0 2>1 | grep -oP '([0-9a-f]{2}:){5}([0-9a-f]{2})')
+        echo "BT MAC: $bt_mac"
+        if [ ! -z "$bt_mac" ] ; then
+            echo $bt_mac > /var/lib/bluetooth/board-address
+            echo "BT MAC: $bt_mac"
+        fi
+        echo 1 > /sys/module/hci_smd/parameters/hcismd_set
         exit 0
     fi
     sleep 1
@@ -16,4 +25,5 @@ seq 1 $MAXTRIES | while read i ; do
         # must have gotten through all our retries, fail
         exit 1
     fi
+
 done
