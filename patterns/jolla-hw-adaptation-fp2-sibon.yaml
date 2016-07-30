@@ -86,6 +86,7 @@ Requires:
 
 # For FM radio
 - qt5-qtmultimedia-plugin-mediaservice-irisradio
+- jolla-mediaplayer-radio
 
 Summary: Jolla HW Adaptation fp2-sibon
 
