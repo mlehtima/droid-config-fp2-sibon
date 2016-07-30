@@ -39,7 +39,7 @@ viewfinderResolution='1920x1080'
 isoValues=[0, 100, 200, 400]
 whiteBalanceValues=[0, 3, 2, 6, 5]
 focusDistanceValues=[4, 16]
-flashValues=[2]
+flashValues=[2, 32]
 exposureCompensationValues=[4, 2, 0, -2, -4]
 focusDistance=16
 
