@@ -91,5 +91,8 @@ Requires:
 # Flashlight
 - jolla-settings-system-flashlight
 
+# Multi-SIM settings
+- jolla-settings-networking-multisim
+
 Summary: Jolla HW Adaptation fp2-sibon
 
