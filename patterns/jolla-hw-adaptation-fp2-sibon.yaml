@@ -16,6 +16,7 @@ Requires:
 - droid-config-fp2-sibon-pulseaudio-settings
 - droid-config-fp2-sibon-policy-settings
 - droid-config-fp2-sibon-preinit-plugin
+- droid-config-fp2-sibon-flashing
 - droid-hal-version-fp2-sibon
 
 - pulseaudio-modules-droid
@@ -50,7 +51,6 @@ Requires:
 - usb-moded
 - usb-moded-defaults-android
 - usb-moded-developer-mode-android
-- usb-moded-pc-suite-mode-android
 
 # Extra useful modes not officially supported:
 # might need some configuration to get working
