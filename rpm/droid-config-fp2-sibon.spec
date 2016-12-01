@@ -15,6 +15,9 @@
 Provides: bluez-configs
 Conflicts: bluez-configs-sailfish
 Obsoletes: bluez-configs-sailfish
+Provides: obexd-configs
+Conflicts: obexd-configs-sailfish
+Obsoletes: obexd-configs-sailfish
 Provides: ofono-configs
 Provides: sensord-configs
 

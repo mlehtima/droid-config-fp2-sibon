@@ -63,7 +63,7 @@ Requires:
 # from update13, this is needed explicitly
 #- bluez-configs-sailfish
 # configurations for OBEX
-- obexd-configs-sailfish
+#- obexd-configs-sailfish
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
