@@ -12,6 +12,9 @@
 # We assume most devices will
 %define have_modem 1
 
+Provides: bluez-configs
+Conflicts: bluez-configs-sailfish
+Obsoletes: bluez-configs-sailfish
 Provides: ofono-configs
 Provides: sensord-configs
 
