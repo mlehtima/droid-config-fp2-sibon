@@ -17,5 +17,8 @@
 
 Provides: ofono-configs
 Provides: sensord-configs
+Provides: ngfd-settings
+Provides: ngfd-settings-sailfish
+Obsoletes: ngfd-settings-sailfish
 
 %include droid-configs-device/droid-configs.inc
