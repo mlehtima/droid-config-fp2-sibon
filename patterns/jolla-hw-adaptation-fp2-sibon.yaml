@@ -72,21 +72,18 @@ Requires:
 # For GPS
 - geoclue-provider-hybris
 
+# For FM radio
+- qt5-qtmultimedia-plugin-mediaservice-irisradio
+- jolla-mediaplayer-radio
+
 # for audio during calls
 - pulseaudio-modules-droid-glue
 
 # For mounting SD card automatically
 - sd-utils
 
-# For FM radio
-- qt5-qtmultimedia-plugin-mediaservice-irisradio
-- jolla-mediaplayer-radio
-
 # Flashlight
 - jolla-settings-system-flashlight
-
-# Multi-SIM settings
-- jolla-settings-networking-multisim
 
 Summary: Jolla HW Adaptation fp2-sibon
 
