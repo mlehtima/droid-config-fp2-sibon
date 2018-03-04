@@ -1,7 +1,7 @@
 #!/bin/sh
 
-main_module_config_file="/home/nemo/.local/camera-module-main.conf"
-front_module_config_file="/home/nemo/.local/camera-module-front.conf"
+main_module_config_file="/etc/droid-cameradetect-module-main.conf"
+front_module_config_file="/etc/droid-cameradetect-module-front.conf"
 
 main_modules=( "ov8865_q8v18a" "ov12870" )
 front_modules=( "ov2685" "ov5670" )

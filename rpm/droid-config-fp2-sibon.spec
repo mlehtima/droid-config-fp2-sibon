@@ -18,4 +18,11 @@
 Provides: ofono-configs
 Provides: sensord-configs
 
+Requires: droid-camres
+
 %include droid-configs-device/droid-configs.inc
+
+%pre
+if [ "$1" = "2" ]; then
+  rm /etc/droid-cameradetect-module*.conf || :
+fi
