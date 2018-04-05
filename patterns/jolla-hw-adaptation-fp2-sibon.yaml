@@ -10,7 +10,7 @@ Requires:
 - droid-config-fp2-sibon-policy-settings
 - droid-config-fp2-sibon-preinit-plugin
 - droid-config-fp2-sibon-flashing
-- droid-config-fp2-sibon-bluez4
+- droid-config-fp2-sibon-bluez5
 - droid-hal-version-fp2-sibon
 
 # Hybris packages
