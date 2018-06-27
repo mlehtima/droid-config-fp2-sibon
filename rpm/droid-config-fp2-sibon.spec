@@ -2,7 +2,7 @@
 # ../droid-configs-device/droid-configs.inc
 %define device FP2
 %define vendor fairphone_devices
-%define rpm_device fp2-sibon    
+%define rpm_device fp2-sibon
 %define rpm_vendor fairphone
 %define vendor_pretty Fairphone
 %define device_pretty Fairphone 2
@@ -20,7 +20,6 @@
 %define ofono_disable_plugins bluez4,dun_gw_bluez4,hfp_ag_bluez4,hfp_bluez4,dun_gw_bluez5,hfp_bluez5
 
 Provides: ofono-configs
-Provides: sensord-configs
 
 Requires: droid-camres
 
