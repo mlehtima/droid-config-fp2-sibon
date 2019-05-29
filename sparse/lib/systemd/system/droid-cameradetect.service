@@ -1,10 +1,9 @@
 [Unit]
 Description=Detect camera module change
-After=droid-late-start.service
+After=init-done.service
 Conflicts=shutdown.target actdead.target
 
 [Service]
 Type=oneshot
-ExecStartPre=/bin/sleep 10
 ExecStart=/bin/sh /usr/bin/droid/droid-cameradetect.sh
 RemainAfterExit=yes

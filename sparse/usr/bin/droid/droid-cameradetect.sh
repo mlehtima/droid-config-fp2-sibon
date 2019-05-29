@@ -32,10 +32,22 @@ found_main_module=$(detect_camera "${main_modules[@]}")
 found_front_module=$(detect_camera "${front_modules[@]}")
 
 if [ "$found_main_module" != "$main_module" -o "$found_front_module" != "$front_module" ]; then
-  echo "Camera module changed. Updating camera configuration file"
+  ret=1
+  for i in 1 2 3 4 5
+  do
+    echo "Camera module changed. Updating camera configuration file. Attempt ${i}"
+    /usr/bin/droid-camres -platform hwcomposer -w /etc/dconf/db/vendor.d/jolla-camera-hw.txt
+    ret=$?
+    if [ "$ret" -eq 0 ]; then
+      break
+    fi
+  done
+  if [ "$ret" -ne 0 ]; then
+    echo "Failed to generate camera configuration, exiting!"
+    exit $ret
+  fi
   echo $found_main_module > $main_module_config_file
   echo $found_front_module > $front_module_config_file
-  /usr/bin/droid-camres -platform hwcomposer -w /etc/dconf/db/vendor.d/jolla-camera-hw.txt
   touch /etc/dconf/db/vendor.d/
   dconf update
 fi
