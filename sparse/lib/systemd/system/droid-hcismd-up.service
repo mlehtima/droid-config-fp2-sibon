@@ -1,6 +1,6 @@
 [Unit]
 Description=Enable Bluetooth HCI over SMD
-After=droid-late-start.target
+After=droid-late-start.service
 Before=bluetooth.service
 Conflicts=shutdown.target actdead.target
 
