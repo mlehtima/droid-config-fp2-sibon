@@ -25,6 +25,8 @@ Requires: droid-camres
 
 
 %include droid-configs-device/droid-configs.inc
+%include patterns/patterns-sailfish-device-adaptation-fp2-sibon.inc
+%include patterns/patterns-sailfish-device-configuration-fp2-sibon.inc
 
 %pre
 if [ "$1" = "2" ]; then
