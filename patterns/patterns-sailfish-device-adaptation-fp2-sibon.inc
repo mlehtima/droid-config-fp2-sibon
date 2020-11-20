@@ -38,6 +38,7 @@ Requires: qtscenegraph-adaptation
 
 # For devices with droidmedia and gst-droid built, see HADK pdf for more information
 Requires: gstreamer1.0-droid
+Requires: gmp-droid
 
 # This is needed for notification LEDs
 Requires: mce-plugin-libhybris
