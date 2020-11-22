@@ -6,12 +6,20 @@ Requires: patterns-sailfish-device-adaptation-fp2-sibon
 # For devices with cellular modem. Those without one, please comment out:
 Requires: patterns-sailfish-cellular-apps
 # Early stages of porting benefit from these:
-Requires: patterns-sailfish-dev-tools
-Requires: patterns-sailfish-rnd
+Requires: jolla-developer-mode
+Requires: sailfishsilica-qt5-demos
 Requires: libhybris-tests
 Requires: busybox-static
+Requires: net-tools
+Requires: openssh-clients
 Requires: openssh-server
+Requires: vim-enhanced
 Requires: zypper
+Requires: strace
+
+# jolla-rnd-device will enable usb-moded even when UI is not yet
+# brought up (useful during development, available since update10)
+Requires: jolla-rnd-device
 
 Requires: sailfish-content-graphics-z%{icon_res}
 
