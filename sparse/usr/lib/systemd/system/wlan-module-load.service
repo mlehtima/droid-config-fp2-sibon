@@ -7,10 +7,7 @@ Conflicts=shutdown.target actdead.target
 [Service]
 Type=simple
 RemainAfterExit=yes
-ExecStartPre=/bin/touch /dev/wcnss_wlan
-ExecStartPre=/bin/sleep 10
-ExecStart=/sbin/modprobe pronto_wlan
-ExecStop=/sbin/rmmod wlan
+ExecStart=/bin/sh -c "echo 0 > /sys/module/wlan/parameters/con_mode"
 Restart=on-failure
 RestartSec=2
 
