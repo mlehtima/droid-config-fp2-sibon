@@ -3,35 +3,29 @@
 main_module_config_file="/etc/droid-cameradetect-module-main.conf"
 front_module_config_file="/etc/droid-cameradetect-module-front.conf"
 
-main_modules=( "ov8865_q8v18a" "ov12870" )
-front_modules=( "ov2685" "ov5670" )
+main_modules="-e ov8865_q8v18a -e ov12870"
+front_modules="-e ov2685 -e ov5670"
 
-if [ ! -f "$main_module_config_file" -o ! -f "$front_module_config_file" ]
+if [ ! -f "$main_module_config_file" ] || [ ! -f "$front_module_config_file" ]
 then
   main_module=""
   front_module=""
 else
-  main_module=`cat $main_module_config_file`
-  front_module=`cat $front_module_config_file`
+  main_module=$(cat $main_module_config_file)
+  front_module=$(cat $front_module_config_file)
 fi
 
 detect_camera()
-{
-  local modules=("$@")
-  local camera_detect_params=""
-  for module in "${modules[@]}"
-  do
-    camera_detect_params+=" -e $module"
-  done
+(
+  camera_detect_params="$*"
+  found_module=$(cat /sys/devices/fd8c0000.qcom,msm-cam/video4linux/*/name | grep $camera_detect_params)
+  echo "$found_module"
+)
 
-  local found_module=`cat /sys/devices/fd8c0000.qcom,msm-cam/video4linux/*/name | grep $camera_detect_params`
-  echo $found_module
-}
+found_main_module=$(detect_camera "$main_modules")
+found_front_module=$(detect_camera "$front_modules")
 
-found_main_module=$(detect_camera "${main_modules[@]}")
-found_front_module=$(detect_camera "${front_modules[@]}")
-
-if [ "$found_main_module" != "$main_module" -o "$found_front_module" != "$front_module" ]; then
+if [ "$found_main_module" != "$main_module" ] || [ "$found_front_module" != "$front_module" ]; then
   ret=1
   for i in 1 2 3 4 5
   do
@@ -46,8 +40,8 @@ if [ "$found_main_module" != "$main_module" -o "$found_front_module" != "$front_
     echo "Failed to generate camera configuration, exiting!"
     exit $ret
   fi
-  echo $found_main_module > $main_module_config_file
-  echo $found_front_module > $front_module_config_file
+  echo "$found_main_module" > $main_module_config_file
+  echo "$found_front_module" > $front_module_config_file
   touch /etc/dconf/db/vendor.d/
   dconf update
 fi
