@@ -1,8 +1,9 @@
 [Unit]
 Description=Load wifi module
-After=droid-late-start.service
+After=droid-late-start.service droid-hcismd-up.service
 Before=network.target
 Conflicts=shutdown.target actdead.target
+ConditionPathExists=/sys/module/wlan/parameters/con_mode
 
 [Service]
 Type=simple
