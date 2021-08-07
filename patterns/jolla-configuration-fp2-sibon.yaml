@@ -1,7 +1,0 @@
-Description: Pattern with packages for fp2-sibon configurations
-Name: jolla-configuration-fp2-sibon
-Requires:
-- patterns-sailfish-device-configuration-fp2-sibon
-
-Summary: Jolla Configuration fp2-sibon
-
