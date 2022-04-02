@@ -66,6 +66,9 @@ Requires: jolla-devicelock-daemon-encsfa
 # For GPS
 Requires: geoclue-provider-hybris-hal
 
+# Telephony (RIL sockets)
+Requires: ofono-ril-plugin
+
 # For FM radio
 Requires: qt5-qtmultimedia-plugin-mediaservice-irisradio
 Requires: jolla-mediaplayer-radio
