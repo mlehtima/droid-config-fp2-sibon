@@ -1,2 +1,2 @@
 load-module module-udev-detect
-load-module module-droid-card rate=48000 config=/etc/audio_policy.conf
+load-module module-droid-card rate=48000 config=/etc/audio_policy.conf quirks=+unload_call_exit
